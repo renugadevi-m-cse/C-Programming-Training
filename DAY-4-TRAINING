@@ -1,0 +1,220 @@
+//Strong Number
+#include <stdio.h>
+
+int factorial(int n);
+
+int main()
+{
+    int t, num, digit, sum, temp;
+    scanf("%d", &t);
+    while (t--)
+    {
+        scanf("%d", &num);
+        temp = num;
+        sum = 0;
+        while (num != 0)
+        {
+            digit = num % 10;
+            sum += factorial(digit);
+            num /= 10;
+        }
+        if (sum == temp)
+            printf("YES\n");
+        else
+            printf("NO\n");
+    }
+    return 0;
+}
+int factorial(int n)
+{
+    if (n == 0 || n == 1)
+        return 1;
+    return n * factorial(n - 1);
+}
+
+//Water Bottles
+int numWaterBottles(int numBottles, int numExchange) {
+    int total=numBottles;
+    int empty=numBottles;
+    while(empty>=numExchange)
+    {
+        int newBottle=empty/numExchange;
+        total+=newBottle;
+        empty=newBottle+(empty%numExchange);
+    }
+    return total;
+}
+
+//Happy Number
+#include <stdio.h>
+#include <stdbool.h>
+bool isHappy(int n)
+{
+    int sum;
+    while (n != 1 && n != 4)
+    {
+        sum = 0;
+        while (n > 0)
+        {
+            int d = n % 10;
+            sum += d * d;
+            n /= 10;
+        }
+        n = sum;
+    }
+    return n == 1;
+}
+
+//Rectangle Pattern
+#include <stdio.h>
+
+int main() {
+    int a,b,i,j;
+    scanf("%d %d",&a,&b);
+    for(i=0;i<a;i++)
+    {
+        for(j=0;j<b;j++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+//Staircase of Stars
+#include <stdio.h>
+
+int main() {
+    int n,i,j;
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=i;j++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+//Descending Star Steps
+#include <stdio.h>
+
+int main() {
+    int n,i,j;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        for(j=i;j<n;j++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+//Binary Pattern
+#include <stdio.h>
+
+int main() {
+    int N;
+    scanf("%d", &N);
+    int start = 1;
+    for (int i = N; i >= 1; i--) {
+        int value = start;
+        for (int j = 0; j < i; j++) {
+            printf("%d", value);
+            value = 1 - value;
+        }
+        printf("\n");
+        start = 1 - start;
+    }
+    return 0;
+}
+
+//Asterisk Pattern: X with Horizontal and Vertical Cut
+#include <stdio.h>
+
+int main() {
+    int N,i,j;
+    scanf("%d",&N);
+    int mid=N/2;
+    for(i=0;i<N;i++)
+    {
+        for(j=0;j<N;j++)
+        {
+            if ((i==j)||(i+j==N-1)||(i==mid)||(j==mid))
+            {
+                printf("* ");
+            }
+            else
+            {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+//Hollow Diamond Pattern
+#include <stdio.h>
+
+int main() {
+    int N,i,j;
+    scanf("%d", &N);
+    for(i=0;i<N;i++)
+    {
+        for(j=0;j<N-i-1;j++)
+        {
+            printf(" ");
+        }
+        printf("*");
+        if(i>0) {
+            for(j= 0;j<2*i-1;j++)
+            {
+                printf(" ");
+            }
+            printf("*");
+        }
+        printf("\n");
+    }
+    for(i=N-2;i>=0;i--)
+    {
+        for(j=0;j<N-i-1;j++)
+        {
+            printf(" ");
+        }
+        printf("*");
+        if(i>0) {
+            for(j=0;j<2*i-1;j++)
+            {
+                printf(" ");
+            }
+            printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+//Filled Alphabet Pyramid Pattern
+#include <stdio.h>
+
+int main() {
+    int N;
+    scanf("%d", &N);
+    for (int i = 0; i < N; i++) {
+        for (int s = 0; s < N - i - 1; s++) {
+            printf("  ");
+        }
+        for (int j = 0; j < 2 * i + 1; j++) {
+            printf("%c ", 'A' + j);
+        }
+        printf("\n");
+    }
+    return 0;
+}
