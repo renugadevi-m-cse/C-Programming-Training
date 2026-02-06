@@ -1,2 +1,2 @@
-# Day-1-C-Programming-Training
+C-Programming-Training
 Basic C Programs
