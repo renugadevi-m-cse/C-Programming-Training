@@ -1,0 +1,79 @@
+//Manual Power Calculator
+#include <stdio.h>
+#include <math.h>
+int main() {
+    int a,b;
+    scanf("%d %d",&a,&b);
+    printf("%d",(int)pow(a,b));
+    return 0;
+}
+
+//Maximum and Minimum Digit
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int num,digit,max=0,min=9;
+    scanf("%d",&num);
+    if(num<0)
+    {
+        num=llabs(num);
+    }
+    if(num==0)
+    {
+        printf("0 0");
+        return 0;
+    }
+    while(num!=0)
+    {
+        digit=num%10;
+        if(digit>max)
+        {
+            max=digit;
+        }
+        if(digit<min)
+        {
+            min=digit;
+        }
+        num=num/10;
+    }
+    printf("%d ",max);
+    printf("%d",min);
+    return 0;
+}
+
+//Is it an Armstrong Number?
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int num,N,digit,count=0,sum=0;
+    scanf("%d",&num);
+    N=num;
+    while(num!=0)
+    {
+        count++;
+        num=num/10;
+    }
+    num=N;
+    while(num!=0)
+    {
+        digit=num%10;
+        sum=sum+pow(digit,count);
+        num=num/10;
+    }
+    if(sum==N)
+    {
+        printf("true");
+    }
+    else
+    {
+        printf("false");
+    }
+    return 0;
+}
+
