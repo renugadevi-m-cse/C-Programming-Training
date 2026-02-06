@@ -1,0 +1,37 @@
+// COUNT NO OF DIGITS
+#include <stdio.h>
+
+int main() {
+    int num,digit=0;
+    scanf("%d",&num);
+    while(num!=0)
+    {
+        num=num/10;
+        digit++;
+    }
+    printf("%d",digit);
+
+    return 0;
+}
+
+// CONVERT LOWERCASE TO UPPERCASE AND VISE-VERSA
+#include <stdio.h>
+int main() {
+    char ch;
+    scanf(" %c", &ch);
+    if (ch >= 'a' && ch <= 'z')
+    {
+        ch = ch - 32; 
+        printf("%c", ch);
+    }
+    else if (ch >= 'A' && ch <= 'Z')
+    {
+        ch = ch + 32; 
+        printf("%c", ch);
+    }
+    else
+    {
+        printf("Not an alphabet character");
+    }
+    return 0;
+}
