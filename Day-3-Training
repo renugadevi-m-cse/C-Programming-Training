@@ -8,9 +8,77 @@ int main() {
     return 0;
 }
 
+//Fibonacci Number
+int fib(int n){
+    if (n ==0)
+    return 0;
+    if(n==1)
+    return 1;
+    int a = 0, b = 1, c;
+    for (int i = 2; i <= n; i ++) {
+        c = a +b;
+        a = b;
+        b = c;
+    }
+return b;
+}
+
+//Tribonacci Number
+int tribonacci(int n) {
+    if(n == 0)
+    return 0;
+    if(n == 1 || n == 2)
+    return 1;
+    int a = 0, b =1, c = 1, d;
+    for(int i = 3; i <= n; i++) {
+        d = a + b + c;
+        a = b;
+        b = c;
+        c = d;
+    }
+    return c;
+}
+
+//NO OF COMMON FACTORS
+int commonFactors(int a, int b) {
+    int count=0;
+    int c=(a<b)?a:b;
+    for(int i=1;i<=c;i++)
+    {
+        if(a%i==0 && b%i==0)
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+//THREE DIVISORS
+bool isThree(int n) {
+    int count=0;
+    for(int i=1;i<=n;i++)
+    {
+        if(n%i==0)
+        {
+            count++;
+        }
+    }
+    return count==3;
+}
+
+//COUNT ME
+int countDigits(int n) {
+    int count=0;
+    while(n!=0)
+    {
+        count++;
+        n=n/10;
+    }
+    return count;
+}
+
 //Maximum and Minimum Digit
 #include <stdio.h>
-#include <string.h>
 #include <math.h>
 #include <stdlib.h>
 
@@ -44,12 +112,41 @@ int main() {
     return 0;
 }
 
+//Reverse the number 
+#include <stdio.h>
+
+int main() {
+	int num,digit,new_num=0;
+	scanf("%d",&num);
+	;
+	while(num!=0)
+	{
+	    digit=num%10;
+	    num=num/10;
+	    new_num=new_num*10+digit;
+	}
+	printf("%d",new_num);
+	return 0;
+}
+
+
+
+//Palindrome Number
+bool isPalindrome(int x) {
+    if(x < 0 || (x % 10 == 0 && x != 0))
+    return false;
+    int reversed = 0;
+
+    while (x > reversed) {
+        reversed = reversed * 10 + x % 10;
+        x /= 10;
+    }
+    return (x == reversed) || (x == reversed / 10);
+}
+
 //Is it an Armstrong Number?
 #include <stdio.h>
-#include <string.h>
-#include <math.h>
-#include <stdlib.h>
-
+#include<math.h>
 int main() {
     int num,N,digit,count=0,sum=0;
     scanf("%d",&num);
